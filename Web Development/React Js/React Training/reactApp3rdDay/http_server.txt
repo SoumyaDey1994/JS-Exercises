@@ -1,0 +1,22 @@
+var http = require('http');
+var fs = require('fs');
+//url mod is required to parse the url passed 
+var url = require('url');
+http.createServer(function (request,response){
+    //parse the pathname containing the filename
+    var pathname = url.parse(request.url).pathname;
+    //print the name of the file for which request is made
+    console.log("Request for "+pathname+" received");
+    //read the requested file content from file system
+    fs.readFile(pathname.substr(1), function(err, data){
+        if(err){
+            console.log(err.stack);
+            response.writeHead(404, {'Content-Type':'text/html'});
+        }else{
+            response.writeHead(200, {'Content-Type':'text/html'});
+            response.write(data.toString());
+        }
+        response.end();
+    });
+}).listen(8081);
+console.log('Server Running');

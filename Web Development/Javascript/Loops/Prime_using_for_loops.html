@@ -1,0 +1,37 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          document.write("HELLO SKD"+"<br>");
+          var lower_bound= parseInt(prompt("Enter Lower Bound Value: "));
+          var upper_bound= parseInt(prompt("Enter Upper Bound Value: "));
+          var primes= find_primes_in_range();
+          document.write("Prime Numbers within Range: " + primes);
+	alert("Prime Numbers within Range: \n" +primes.join('\n'));
+
+	function find_primes_in_range()
+	{
+         		 var flag=0,primeArray=[];
+        		 for(var i= lower_bound; i<=upper_bound; i++){
+               		 flag=0;
+            		 for(var j=2; j<=Math.sqrt(i);j++){
+                		  if(i%j==0)
+                   		 {
+                    			 flag=1;
+                     			 break;
+                    		}
+            		}
+           		 if(flag==0)
+              			primeArray.push(i);
+          		          }  
+     		 //  document.write(primeArray);
+	        return primeArray;
+     	 }
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+    <p> Have a Nice Day!!!! </p>
+  </body>
+</html>

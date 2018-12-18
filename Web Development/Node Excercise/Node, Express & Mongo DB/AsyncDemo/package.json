@@ -1,0 +1,13 @@
+{
+  "name": "AsyncDemo",
+  "version": "1.0.0",
+  "description": "Demo to Asynchronous Programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "keywords": ["Asynchronous javaScript", "Callback", "Promises", "Async and Await"],
+  "author": "Soumya Dey",
+  "license": "ISC"
+}

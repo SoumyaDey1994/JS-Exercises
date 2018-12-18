@@ -1,0 +1,26 @@
+import React from 'react'; 
+import BoardTask from './BoardTask.jsx' ;
+
+class BoardColumn extends React.Component {
+  
+    render(){
+        return(
+            
+                <td className='column'>
+                    <h1>{this.props.data.status}</h1>
+                    <div className='item-content'>
+                        <h2>{this.props.data.title}</h2>
+                        <p className='item-description'>{this.props.data.description}</p>
+                        <ul className="items">
+                            {this.props.data.tasks.map((column,i) => 
+                                <BoardTask key = {i} data = {column}/>
+                            )}
+                        </ul>
+                    </div>
+                </td>
+            
+        );
+    }
+}
+
+export default BoardColumn;

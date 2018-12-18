@@ -1,0 +1,62 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+         // document.write("HELLO SKD");
+          var grade,Level;
+          var javascript_marks= parseInt(prompt("Enter Your Score in Javascript"));
+          var java_marks= parseInt(prompt("Enter Your Score in Java"));
+          var sql_marks= parseInt(prompt("Enter Your Score in SQL"));
+
+          var average= (javascript_marks+ java_marks+ sql_marks)/3;
+	
+         if(isNaN(javascript_marks) || isNaN(java_marks) || isNaN(sql_marks) )
+	alert("You have done some mistake while entering the marks. Please Enter the marks Properly");
+	 window.close();
+         if( javascript_marks >=45 && java_marks>=45 && sql_marks>=45)
+            {
+		if(average >=90 && average <=100)
+			//alert("Your Grade is A+, Level: Outstanding");
+			grade="A+";
+		else if(average >=75 && average < 90)
+			//alert("Your Grade is A, Level: Very Good");
+			grade="A";
+		else if(average >=60 && average < 75)
+			//alert("Your Grade is B+, Level: Good");
+			grade="B+";
+		else if(average >=45 && average < 60)
+			//alert("Your Grade is B, Level: Just Passed");
+			grade="B";
+            }else
+	   //alert("Sorry!!!!You have not cleared the exam");
+	    grade="F";
+	
+	switch(grade)
+	{
+		case "A+" : Level= "Outstanding";
+			  alert("Your Grade is:"+ grade +",  Status: " + Level);
+			  break;
+		case "A" : Level= "Very Good";
+			  alert("Your Grade is:"+ grade +",  Status: " + Level);
+			  break;
+		case "B+" : Level= "Good";
+			  alert("Your Grade is:"+ grade +",  Status: " + Level);
+			  break;
+		case "B" : Level= "Just Passed";
+			  alert("Your Grade is:"+ grade +",  Status: " + Level);
+			  break;
+		case "F" : Level= "Failed";
+			  alert("Your Grade is:"+ grade +",  Status: " + Level);
+			  break;
+		default: 	
+			  alert("No Match Found");
+	}
+	
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!--  <p> Have a Nice Day!!!! </p>  -->
+  </body>
+</html>

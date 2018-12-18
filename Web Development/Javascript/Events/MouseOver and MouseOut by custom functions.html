@@ -1,0 +1,34 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          function handleMouseOver(event)
+	{
+		event.style.background= "Blue";
+		event.style.color="White"
+		event.getElementsByTagName("p")[0].innerHTML= "This Makes Background Blue and Text Color White. Hope You can Feel The Difference";
+		event.style.height="450px";
+		event.style.width="450px";
+
+ 	}
+           function handleMouseOut(event)
+	{
+		event.style.background= "yellow";
+		event.style.color="red"
+		event.getElementsByTagName("p")[0].innerHTML= "This Makes Background Yellow and Text Color Red. Hope You can Feel This Difference too";
+		event.style.height="400px";
+		event.style.width="400px";
+ 	}
+      </script>
+  </head>
+  <body>
+ <!--   <h2 >You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+	<h1 style="margin-left: 320px"> Alert Friends </h1>
+                 <div id="section" style=" height:400px; width:400px; margin-left: 240px; border: 2px solid black" onmouseover="handleMouseOver(this)"                                      onmouseout="handleMouseOut(this)">
+                              <p  style="font:25px bold Tahoma; text-align:center; padding:10px                                                  auto"> Point The Cursor Here to See the Effects</p>    
+	</div>
+     <marquee onmouseover="stop" onmouseout="start()">Congratulations!!!! You are Progressing quite well </marquee>
+  </body>
+</html>

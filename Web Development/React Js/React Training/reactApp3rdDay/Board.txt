@@ -1,0 +1,102 @@
+import React from 'react'; 
+import BoardColumn from './BoardColumn.jsx' ;
+
+class Board extends React.Component {
+    constructor(){
+        super();
+        this.itemlist={
+            data:[
+                {
+                    id: 1,
+                    title: "1st Item",
+                    description: "Description of 1st item",
+                    status: "todo",
+                    tasks: [
+                        {
+                            id: 1,
+                            name: "call Ravi",
+                            done: true
+                        },
+                        {
+                            id: 2,
+                            name: "reply to the emails",
+                            done: false
+                        },
+                        {
+                            id: 3,
+                            name: "read the bug reports",
+                            done: false
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "2nd Item",
+                    description: "Description of 2nd item",
+                    status: "in progress",
+                    tasks: [
+                        {
+                            id: 1,
+                            name: "call Yusra",
+                            done: true
+                        },
+                        {
+                            id: 2,
+                            name: "reply to the emails",
+                            done: false
+                        },
+                        {
+                            id: 3,
+                            name: "read the bug reports",
+                            done: false
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    title: "3rd Item",
+                    description: "Description of 3rd item",
+                    status: "done",
+                    tasks: [
+                        {
+                            id: 1,
+                            name: "call Atreyi",
+                            done: true
+                        },
+                        {
+                            id: 2,
+                            name: "reply to the emails",
+                            done: false
+                        },
+                        {
+                            id: 3,
+                            name: "read the bug reports",
+                            done: false
+                        }
+                    ]
+                }
+
+            ]
+        }
+    }
+
+
+
+
+    render(){
+        return(
+            <div>
+                <table id="notice-board">
+                    <tbody>
+                        <tr>
+                            {this.itemlist.data.map((column,i) => <BoardColumn key = {i} data = {column}/>
+                            )}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        );
+    }
+}
+
+export default Board;

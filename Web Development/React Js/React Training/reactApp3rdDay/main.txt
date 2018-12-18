@@ -1,0 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+/*import Board from './Board.jsx';*/
+import ValidationDemo from './app.jsx';
+
+/*ReactDOM.render(<Board/>,document.getElementById('container'));*/
+ReactDOM.render(<ValidationDemo/>,document.getElementById('container'));

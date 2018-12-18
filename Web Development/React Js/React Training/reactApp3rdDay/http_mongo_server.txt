@@ -1,0 +1,51 @@
+var http = require('http');
+var fs = require('fs');
+
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/mydb');
+var collection = db.get('itccollection');
+
+var url = require('url');
+
+http.createServer(function (request, response){
+    var ur = url.parse(request.url, true);
+    var pathname = ur.pathname;
+    console.log("Request for "+pathname+" received");
+    fs.readFile(pathname.substr(1), function (err, data){
+        if(err){
+            console.log(err.stack);
+        }else{
+            response.writeHead(200, {'Content-Type': 'text/html'})
+        
+
+        var qr = ur.query;
+        if(pathname=="/result.html"){
+            var ob = JSON.stringify(qr);
+            console.log(ob.length);
+            if(ob.length>2){
+                var obj=JSON.parse(ob);
+                collection.insert({title:obj.name,by:obj.pass})
+                response.write("Name is --> "+obj.name);
+                response.write("<br>Password is --> "+obj.pass);
+                response.write("<br>Address is --> "+obj.address);
+                response.write("<br>email is --> "+obj.email);
+                response.write("<a href=login.html>Login</a>");
+            }
+        }
+        if(pathname=="/loginresult.html"){
+            var ob = JSON.stringify(qr);
+            console.log(ob.length);
+            if(ob.length>2){
+                var obj=JSON.parse(ob);
+                collection.insert({title:obj.name,by:obj.pass})
+                response.write("Name is --> "+obj.name);
+                response.write("<br>Password is --> "+obj.pass);
+            }
+        }
+        response.write(data.toString());
+        }
+        response.end();
+    });
+}).listen(8081);
+console.log('Server running');

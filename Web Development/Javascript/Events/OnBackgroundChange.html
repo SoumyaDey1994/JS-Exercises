@@ -1,0 +1,26 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+         	function  handleBackgroundImage(e)
+	{
+		document.body.style.backgroundImage= "url(' "+e.value+" ')";
+		document.body.style.backgroundSize="100% 100%";	
+	}
+      </script>
+  </head>
+  <body >
+ <!--   <h2 >You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+	<select onchange="handleBackgroundImage(this)" style="margin-top: 300px; margin-left: 400px; height:40px; width:300px; border: 3px solid black;                                       background: #f2d9e6; font: 20px bold Tahoma">
+		<option value="">Please Select an Image</option>
+		<option value="C:/Users/24648/Documents/Web%20Development/Images/nature1.jpg">Nature 1</option>
+		<option value=" C:/Users/24648/Documents/Web%20Development/Images/nature2.jpg">Nature 2</option>
+		<option value="C:/Users/24648/Documents/Web%20Development/Images/nature3.jpg ">Nature 3</option>
+		<option value="C:/Users/24648/Documents/Web%20Development/Images/nature4.jpg">Nature 4</option>
+		<option value="C:/Users/24648/Documents/Web%20Development/Images/nature5.jpg">Nature 5</option>
+	</select>
+                
+  </body>
+</html>

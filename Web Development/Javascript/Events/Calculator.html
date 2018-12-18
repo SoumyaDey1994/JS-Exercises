@@ -1,0 +1,62 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+           function calculate_result(e)
+	{
+		var num1= parseFloat(document.getElementById("Number1").value);
+		var num2= parseFloat(document.getElementById("Number2").value);
+		var answer= document.getElementById("result");
+
+		if(e.value== "Add")
+			answer.value= num1+num2;
+		else if(e.value== "Subtract")
+			answer.value= num1- num2;
+		else if(e.value== "Multiply")
+			answer.value= num1* num2;
+		else if(e.value== "Divide")
+			answer.value= num1/num2;
+		else if(e.value== "Modulus")
+			answer.value= num1%num2;
+
+	}
+
+	function decorate_textbox(e)
+	{
+		e.style.border="2px solid red";
+		e.style.background= "yellow";
+   	}
+
+	function remove_style(e)
+	{
+		e.style.border=null;
+		e.style.background=null;
+	}
+      </script>
+  </head>
+  <body>
+ <!--   <h2 >You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+	<h1 style="margin-left: 320px"> Simple Calculator</h1>
+                 <div id="section" style=" height:400px; width:400px; margin-left: 240px; border: 2px solid black">
+		<br><br>
+                              <label for=" Number1" style="margin: 20px">Enter First Number</label>
+		<input type="text" id="Number1" name="Number1" onfocus="decorate_textbox(this)" onmouseout="remove_style(this)" style="margin-left: 27px; position:absolute; width: 80px"><br><br>
+		<label for=" Number2" style="margin: 20px">Enter Second Number</label>
+		<input type="text" id="Number2" name="Number2" onfocus="decorate_textbox(this)" onmouseout="remove_style(this)" style="margin-left: 10px; position:absolute; width: 80px"><br><br>
+		<br>
+		
+		<input type="button" value="Add" onclick="calculate_result(this)" style="height:25px; width=50px; margin-left: 35px" />
+		<input type="button" value="Subtract" onclick="calculate_result(this)" style="height:25px; width=50px; margin-left: 10px" />
+		<input type="button" value="Multiply" onclick="calculate_result(this)" style="height:25px; width=50px; margin-left: 10px" />
+		<input type="button" value="Divide" onclick="calculate_result(this)" style="height:25px; width=50px; margin-left: 10px" />
+		<input type="button" value="Modulus" onclick="calculate_result(this)" style="height:25px; width=50px; margin-left: 10px" /><br><br><br><br>
+
+		<label for="result" style="margin: 20px; top="5px">Result</label>
+		<input type="text" id="result" name="result"  style="margin-left: 110px; position:absolute; width: 100px; height: 40px; text-align: center" onfocus="decorate_textbox(this)" onmouseout="remove_style(this)"><br><br>
+
+	</div>
+     <marquee onmouseover="stop" onmouseout="start()">Simple Calculator Using HTML-CSS-Javascript</marquee>
+  </body>
+</html>

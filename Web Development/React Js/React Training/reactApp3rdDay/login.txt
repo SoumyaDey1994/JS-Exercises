@@ -1,0 +1,43 @@
+import React from 'react'; 
+const divStyle = {
+  margin: '50px',
+
+};
+class Login extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {username : '', password : ''}
+        this.getUserName = this.getUserName.bind(this);
+        this.getPassword = this.getPassword.bind(this);
+    }
+    getUserName(event){
+        this.setState({username: event.target.value});
+    }
+    getPassword(event){
+        this.setState({password: event.target.value});
+        var value = document.getElementById("numIp").value;
+        console.log("value--> "+value)
+    }
+    isSaved(username, password, event){
+        if(username != "" && password != ""){
+             alert("Welcome "+username);
+        }else
+            alert("Please enter username and password");
+    }
+    
+    
+    
+    render(){
+        return(
+            <div>
+                <div style={divStyle}>USERNAME:  <input type="text"  value={this.state.username} onChange={(e) => this.getUserName(e)}/></div>
+                <div style={divStyle}>PASSWORD:  <input id="numIp" type="number" value={this.state.password} onChange={(e) => this.getPassword(e)}/></div>
+                <div>
+                    <button style={divStyle} onClick={(e) => this.isSaved(this.state.username,this.state.password,e)}>SAVE</button>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Login;

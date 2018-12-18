@@ -1,0 +1,33 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          //var age= document.getElementById("age").value;
+          function validate_age(){
+	var age= document.getElementById("age").value;
+             try{
+                 // if(isNaN(age))
+                   // throw "Please Enter Your Age as a Numeric Value";
+                 if(age == "")
+                    throw "Age cannot be empty. Please Enter Your age";
+                  else if(age <18 )
+                    throw "You are too young to poll vote";
+                  else
+                     window.location.href="http://www.nvsp.in/";
+             }catch(error)
+               {
+                 document.getElementById("errorMessage").innerHTML= error;
+               }
+               
+          }
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+    <label for="age">Enter Your Age</label>
+    <input type="text" id="age" onchange="validate_age()"  >
+    <p id="errorMessage"></p>
+  </body>
+</html>

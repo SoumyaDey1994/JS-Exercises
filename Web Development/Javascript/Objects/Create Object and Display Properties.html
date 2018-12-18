@@ -1,0 +1,47 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          var student1= new Object();
+          student1.name= "Soumya";
+          student1.roll_number= 78;
+          student1.percentage= 85.4
+        
+       function displayDetails(){
+         	document.write("<p>Student Name: "+student1.name+"  </p>");
+        	 document.write("<p>Student Roll Number: "+student1.roll_number+"  </p>");
+                 document.write("<p>Student Sore: "+student1.percentage+" %</p>");
+       }
+
+        function Student(name, roll_number){
+	this.name= name;
+	this.roll_number= roll_number;
+	this.percentage= addPercentage;
+	this.displayStudentInfo= studentInfo;
+	}
+
+	function addPercentage(percentage)
+	{
+		this.percentage= percentage;
+                 }
+
+	function studentInfo(){
+		document.write("<p>Student Name: "+this.name+"  </p>");
+        	                document.write("<p>Student Roll Number: "+this.roll_number+"  </p>");
+		document.write("<p>Student Sore: "+this.percentage+" %</p>");
+	}
+         var student2= new Student("Ankita", 29);
+         student2.percentage(83);
+         student2.displayStudentInfo();
+
+        
+       displayDetails();
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+    
+  </body>
+</html>

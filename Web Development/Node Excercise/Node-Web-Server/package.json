@@ -1,0 +1,15 @@
+{
+  "name": "node-webserver",
+  "version": "1.0.0",
+  "description": "Node Web Server Module Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Soumya Dey",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.6.5",
+    "serve-static": "^1.13.1"
+  }
+}

@@ -1,0 +1,130 @@
+<! doctype html>
+<html>
+  <head>
+       <title>User Registration</title>
+      <script>
+          
+	function validate(){
+		if(document.getElementById("fName").value=="")
+		{
+			alert("Please Enter Your First name");
+			document.getElementById("fName").focus();
+			return false;
+		}
+
+		if(document.getElementById("lName").value=="")
+		{
+			alert("Please Enter Your Last name");
+			document.getElementById("lName").focus();
+			return false;
+		}
+
+		if(isNaN(document.getElementById("age").value))
+		{
+			alert("Please Enter Age as Numeric Value");
+			document.getElementById("age").focus();
+			return false;
+		}
+		
+		if(document.getElementById("age").value=="")
+		{
+			alert("Please Enter Your Age");
+			document.getElementById("age").focus();
+			return false;
+		}
+
+		if(!validate_sex())
+		{
+			alert("Please Select Your Gender");
+			return false;
+		}
+	
+		if(!validate_city())
+		{
+			alert("Please Select Your City from the List");
+			document.getElementById("location").focus();
+			return false;
+		}
+		
+		if(!validate_skills())
+		{
+			alert("Select at least one item from options");
+			return false;
+		}
+	}
+		
+
+	function validate_sex()
+	{
+		var sex= document.getElementsByName("gender");
+		for(var i in sex){
+			if(sex[i].checked)
+				return true;
+			}
+		return false;
+	}
+
+	function validate_city()
+	{
+		if(document.getElementById("location").value=="")
+			return false;
+		else
+			return true;
+	}
+
+	function validate_skills()
+	{
+		if(document.getElementById("Java").checked || document.getElementById("Python").checked || document.getElementById("Javascript").checked||
+			document.getElementById("PHP").checked || document.getElementById("Scala").checked)
+			return true;
+		else
+			return false;
+	}
+
+       </script>
+  </head>
+  <body bgcolor="#B9B2F2">
+	<h2 style="margin-top: 90px; margin-left: 400px" align:center> Enter Your Details Below </h2>
+	<form name="registration" action="Blank.html" onsubmit="return validate()" method="post">
+		<fieldset name="field" style="margin-top: 30px; margin-left: 250px; width: 500px; height: 270px; border: 2px solid red; background: yellow">
+			<legend style="margin-left:50px">Registration Details</legend>
+			<br>
+			<label for="firstName" style="margin-right: 20px"><b>First Name</b></label>
+			<input type="text" name="firstName" id="fName" placeholder="Enter Your First Name Here" required /><br><br>
+			
+			<label for="lastName" style="margin-right: 22px"><b>Last Name</b></label>
+			<input type="text" name="lastName" id="lName" placeholder="Enter Your Last Name Here"  required /><br><br>
+
+			<label for="age" style="margin-right: 68px" ><b>Age</b></label>
+			<input type="text" name="age" id="age" placeholder="Enter Your First Age Here"  required ><br><br>
+
+			<label for="gender" style="margin-right: 65px"><b>Sex</b></label>
+			<input type="radio" name="gender" id="gender" id="male">Male
+			<input type="radio" name="gender" id="gender" id="female">FeMale
+	
+			<br><br>
+			<label style="margin-right: 65px"><b>City</b></label>
+			<select id="location">
+				<option value="">Select Your Location</option>
+				<option value="hydrabad">Hydrabad</option>
+				<option value="bangalore">Bangalore</option>
+				<option value="pune">Pune</option>
+				<option value="kolkata">Kolkata</option>
+			</select><br><br>
+
+			<label style="margin-right: 50px"><b>Skills</b></label>
+			<input type="checkbox" name="Java" id="Java" value="Java">Java
+			<input type="checkbox" name="Python" id="Python" value="Python">Python
+			<input type="checkbox" name="Javascript" id="Javascript" value="Javascript">Javascript
+			<input type="checkbox" name="PHP" id="PHP" value="PHP">PHP
+			<input type="checkbox" name="Scala" id="Scala" value="Scala">Scala
+			<br>
+			
+		</fieldset>
+		<br>
+			<input type="submit" value="Submit" align:centre style="margin-left: 450px">
+			 <input type="reset" value="Reset" align:center style="margin-left: 10px">
+		
+	</form>
+  </body>
+</html>

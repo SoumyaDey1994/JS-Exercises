@@ -1,0 +1,43 @@
+<! doctype html>
+<html>
+  <head>
+	<title>Product Description</title>
+      <script>
+          
+             function Product(product_id, product_name, product_description, original_price ){
+		 this.product_id=product_id;
+		 this.product_name=product_name;
+		 this.product_description= product_description;
+		 this.original_price= original_price;
+		
+		 this.getDiscountedPrice= calculateDiscount;
+		 this.displayProductDetails= product_details;
+
+	 }
+
+	function calculateDiscount(discount_rate){
+		this.selling_price= (this.original_price*(100- discount_rate))/100;
+		this.selling_price= Math.round(this.selling_price);
+	}
+	
+	function product_details(){
+		document.write("<p> Product ID: "+ this.product_id+ "<p>");
+		document.write("<p> Product Name: "+ this.product_name+ "<p>");
+		document.write("<p> Product Description: "+ this.product_description+ "<p>");
+		document.write("<p> Selling Price: INR "+ this.selling_price+ "<p>");
+	}
+
+	var mobile= new Product(0078, "Redmi 4A", "Android SmartPhone having 2GB RAM, 16GB internal Storage, Quad-core Snapdragon 425 Processor, 5MP                                                          Front and 13MP Rear Camera, OS is Android Marshmallow version 6.0.2, 3120mAh Power Cell Battery", 5999);
+	mobile.getDiscountedPrice(12.5);
+	mobile.displayProductDetails();
+	  
+      </script>
+  </head>
+
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+    
+  </body>
+</html>

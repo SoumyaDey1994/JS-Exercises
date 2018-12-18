@@ -1,0 +1,61 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          document.write("HELLO SKD"+"<br>");
+          var lower_bound= parseInt(prompt("Please Enter Lower Limit "));
+          var upper_bound= parseInt(prompt("Please Enter Upper Limit "));
+          var number_array= getNumberArray();
+
+          function getNumberArray(){
+                    var arr=[];
+                     for(var i=lower_bound; i<=upper_bound; i++)
+                          {
+		arr.push(i);
+                           }
+                     return arr;
+                }
+	console.log(number_array);
+                 var sum_of_digits= number_array.map(function(element){
+                 	var sum=0;
+                   while(element != 0)
+	    {
+	          var digit= element%10;
+	           sum+=digit;
+	           element=parseInt(element/10);
+                    }
+	return parseInt(sum);
+           }	
+           );
+         console.log(sum_of_digits);
+          var prime_sum_array= sum_of_digits.map(function (element,index){
+                                 if(isPrime(element))
+			return number_array[index];
+           }	
+           );	
+          prime_sum_array= prime_sum_array.filter(function(element){
+ 
+                        return element!== undefined;
+	});									
+          alert("Numbers whose Sum of Digits are Prime: \n"+ prime_sum_array.join("\n"));
+         console.log(prime_sum_array);
+          function isPrime(element)
+          {
+                 for(var i=2; i<=Math.sqrt(element);i++)
+                     {
+                                if(element%i ==0)
+                                    break;
+                     }
+            if(i > Math.sqrt(element))
+                  return true;
+            else
+                  return false;
+           }
+      </script>
+  </head>
+  <body >
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+    <p> Have a Nice Day!!!! </p>
+  </body>
+</html>

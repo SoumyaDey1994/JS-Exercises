@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Add & Remove Products</title>
+	<script>
+		window.addEventListener('load', handleEvents);
+		function handleEvents()
+		{
+			document.getElementById("add_button").addEventListener('click', add_new_element);
+			document.getElementById("remove_button").addEventListener('click', remove_first_element);
+		}
+
+		function add_new_element()
+		{
+			var parent= document.getElementById("Product_division");
+			var new_para= document.createElement("p");
+			var text= document.createTextNode("Television- 500$");
+			//text.innerHTML= "Television- 500$";
+			new_para.appendChild(text);
+			parent.appendChild(new_para);
+		}
+
+		function remove_first_element()
+		{
+			var parent=document.getElementById("Product_division");
+			parent.removeChild(parent.firstChild);
+		}
+		
+	</script>
+
+</head>
+<body>
+	<h1 align="center"> Product Details </h1>
+	<div id="Product_division" style="margin-top: 50px; margin-left: 300px; border: 2px solid Black; width: 400px; height: 400px">
+		
+		<p id="Product1" style="margin-top: 10px; margin-left: 25px; font: 20px Times New Roman">Laptop- <b>1000</b>$</p>
+		<p id="Product2" style="margin-top: 10px; margin-left: 25px; font: 20px Times New Roman">Mobile Phone- <b>200</b>$</p>
+
+	</div>
+	
+	<input type="button" id="add_button" value="Add New Element" style="font: 12px Tahoma; background: #f0f0f5; margin-top: 10px; margin-left: 350px; height: 30px"\>
+		<input type="button" id="remove_button" value="Remove First Element" style="font: 12px Tahoma; background:#f0f0f5; margin-top: 10px; margin-left: 30px; height: 30px" \>
+
+</body>
+</html>

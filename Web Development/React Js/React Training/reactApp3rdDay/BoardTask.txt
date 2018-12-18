@@ -1,0 +1,28 @@
+import React from 'react'; 
+
+
+class BoardTask extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isChecked : this.props.data.done
+        };
+        this.onChange = this.onChange.bind(this);
+        
+    }
+    onChange(event){
+        this.setState({isChecked : event.target.checked})
+    }
+    render(){
+        return(
+            <div>
+                <li>
+                    <input type="checkbox" checked = {this.state.isChecked} onChange={(e)=>this.onChange(e)}></input>
+                    {this.props.data.name}
+                </li>
+            </div>
+        );
+    }
+}
+
+export default BoardTask;

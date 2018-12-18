@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Signika:400,700|Courgette);
+
+body {
+    background: #eeeeee none repeat scroll 0 0;
+}
+
+
+.task-header:not(:last-child) {
+    border-right: 2px solid #dddddd;
+}
+.task-header {
+    color: #3b414c;
+    float: left;
+    font-size: 23px;
+    margin-right: 25px;
+    width: 31%;
+	height: 400px;
+}
+
+ul {
+    list-style: outside none none;
+    padding: 0;
+}
+
+.list-details {
+    background: #fff none repeat scroll 0 0;
+    font-size: 20px;
+    margin: 11px 25px 0 4px;
+    padding: 5px 8px 1px 12px;
+}
+
+.list-title {
+    color: #000;
+    font-weight: bold;
+}
+
+p {
+    border-bottom: 2px dotted;
+    margin: 0;
+    padding: 0 0 10px;
+}

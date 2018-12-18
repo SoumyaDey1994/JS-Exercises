@@ -1,0 +1,29 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+           var date= new Date();
+           var current_date= date.getDate();
+          // document.getElementById("currentDate").innerHTML= current_date;
+           function start_Time(){
+           	var time= date.toLocaleTimeString();
+          	 document.getElementById("stopwatch").innerHTML= time;
+            }
+
+          function start_Timer(){
+                 setInterval(start_Time, 1000);
+            }
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+    <h2> Current Date: </h2>
+    <p id="currentDate"></p>
+    <br/><br/>
+    <p id="stopwatch"></p>
+    <input type="button" value="Start_Timer" id="start" onclick="start_Timer()"></button> 
+    <input type="button" value="Stop_Timer" id="stop" onclick="stop_Timer()"></button>
+  </body>
+</html>

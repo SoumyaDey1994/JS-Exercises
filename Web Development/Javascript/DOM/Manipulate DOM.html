@@ -1,0 +1,33 @@
+<! doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+      <script>
+          var images=["C:/Users/24648/Documents/My%20Practices/Web%20Development/Images/nature1.jpg", 
+					  "C:/Users/24648/Documents/My%20Practices/Web%20Development/Images/nature2.jpg ", 
+					  " C:/Users/24648/Documents/My%20Practices/Web%20Development/Images/nature3.jpg", 
+					  "C:/Users/24648/Documents/My%20Practices/Web%20Development/Images/nature4.jpg",
+					  "C:/Users/24648/Documents/My%20Practices/Web%20Development/Images/nature5.jpg"];
+          var i=0;
+          function showImages()
+           {
+	
+ 	document.getElementById("image_section").getElementsByTagName("img")[0].src= images[i%5];
+	i=i+1;
+	setTimeout(showImages,3000);
+                
+           }
+       
+      </script>
+  </head>
+  <body onload="showImages()">
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!-- Have a Nice Day!!!! </-> -->
+    <h1 style="text-align:center">My Image</h1>
+    <div id="image_section" style="height:500px; width:500px; margin-left: 500px; background:white; border: 2px solid black" >
+      
+         <img style="height:100%;width:100%"  />
+    </div>
+  </body>
+</html>

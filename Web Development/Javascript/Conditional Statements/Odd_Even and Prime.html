@@ -1,0 +1,41 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+         // document.write("HELLO SKD");
+         var number= parseInt(prompt("Please Enter a Number : "));
+	if(isNaN(number))
+		alert("You did not Enter a Number, Please Enter a Number");
+	else if(!isOdd())
+		alert(number+ " is Even, So it can't be Prime ");
+	else if(isOdd() && !isPrime())
+		alert(number+ " is Odd but Non-Prime ");
+	else 
+		alert(number+ " is both odd and Prime ");
+
+	function isOdd(){
+		return ((number%2)==1);
+	}
+
+	function isPrime(){
+		var i,flag=0;
+		for(i=2;i<=Math.sqrt(number);i++)
+		{
+			if(number%i == 0){
+				flag=1;
+				break;
+			}
+		}
+		if(flag==0)
+			return true;
+		else
+			return false;
+	}
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+   <!--  <p> Have a Nice Day!!!! </p>  -->
+  </body>
+</html>

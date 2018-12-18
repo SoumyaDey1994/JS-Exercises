@@ -1,0 +1,53 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          document.write("HELLO SKD"+"<br>");
+          var upper_limit= parseInt(prompt("Enter the Upper Limit Value: "));
+          var for_array=[], while_array=[], do_while_array=[];
+
+           // Evaluate and Print using for loop
+          for(var i=1; i<= upper_limit; i++)
+	{
+		if(i%3==0)
+		        continue;
+		else 
+		       for_array.push(i);
+	}
+          alert("Number List Using For Loop: " +for_array);
+
+        // Evaluate and Print using while Loop
+	var j=0;
+           while( j++ <= upper_limit)
+              {
+		if(j> upper_limit)
+		        break;
+		else if(j%3==0)
+		        continue;
+		else 
+		       while_array.push(j);
+	        
+              }
+           alert("Number List using While Loop: "+while_array); 
+ 
+         // Evaluate and Print using while Loop
+              j=0;
+              do
+                 {
+		if(j> upper_limit)
+		        break;
+		else if(j%3==0)
+		        continue;
+		else 
+		       do_while_array.push(j);
+                               // j++;
+                  }while(j++ <= upper_limit);
+          alert("Number List using Do_While Loop: "+do_while_array);
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+    <p> Have a Nice Day!!!! </p>
+  </body>
+</html>

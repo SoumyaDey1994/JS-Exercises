@@ -1,0 +1,36 @@
+<! doctype html>
+<html>
+  <head>
+      <script>
+          document.write("HELLO SKD"+"<br>");
+          var maths_score, physics_score, chemistry_score;
+          maths_score= parseFloat(prompt(" Enter The Score of Mathematics "));
+          physics_score= parseFloat(prompt(" Enter The Score of Physics "));
+          chemistry_score= parseFloat(prompt(" Enter The Score of Chemistry "));
+
+          var grade= calculate_grade();
+           function calculate_grade(){
+                  if( isNaN(maths_score) || isNaN(physics_score) || isNaN(chemistry_score))
+	   {
+                                alert("Please Enter The Marks Properly");
+		return false;
+                    }
+                  var average= (maths_score+ physics_score+ chemistry_score)/3;
+	   if(average < 70)
+                        grade="C";
+	   else if(average >=70 && average <90)
+                        grade="B";
+	  else 
+	         grade="A";
+              return grade;
+           }
+
+           alert("Final Grade of The Student: " + grade);
+      </script>
+  </head>
+  <body>
+ <!--   <h2>You are inside HTML body</h2> -->
+    <br/>
+    <p> Have a Nice Day!!!! </p>
+  </body>
+</html>

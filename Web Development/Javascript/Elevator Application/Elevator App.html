@@ -1,0 +1,52 @@
+<! doctype html>
+<html>
+  <head>
+      <style>
+	#theBody{
+		background-repeat:no-repeat;
+		background-size: 400px 700px;
+		margin-left: 500px;
+	}
+      </style>
+      <script>
+	var Elevator_Images= ["C:/Users/24648/Documents/My%20Practices/Web%20Development/Javascript/Elevator%20Application/New%20folder/Elev1.jpg",
+						  "C:/Users/24648/Documents/My%20Practices/Web%20Development/Javascript/Elevator%20Application/New%20folder/Elev2.jpg",
+						  "C:/Users/24648/Documents/My%20Practices/Web%20Development/Javascript/Elevator%20Application/New%20folder/Elev3.jpg"];
+          	var i=0;	
+	function getUserAge(event)
+	{
+		var age= parseInt(prompt("please Enter Your Age"));
+		var thebody= document.getElementById("theBody");
+		if(age > 10 )
+		{
+			    open_door();
+		}
+		else
+		{
+			var element= document.createElement("p");
+			var text= document.createTextNode("Toddlers are Not Allowed to go individually inside the Elevator");
+			element.setAttribute('type', 'text/css');
+			element.setAttribute('style', 'color: red');
+			element.setAttribute('style', 'font: 20px bold Tahoma');
+			element.setAttribute('style', 'text-align: center');
+			thebody.appendChild(element);
+			element.appendChild(text);	
+		}
+	}
+
+	function open_door()
+	{
+		var thebody= document.getElementById("theBody");
+		thebody.background=Elevator_Images[i];
+		i++;
+		if(i<3)
+		      setTimeout(open_door, 500);
+		
+	}
+
+      </script>
+  </head>
+  <body background="C:\Users\24648\Documents\Web Development\Javascript\Elevator Application\New folder\Elev1.jpg" id="theBody" onload="getUserAge(this)">
+       	
+  </body>
+</html>
